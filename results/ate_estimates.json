@@ -1,0 +1,7 @@
+{
+  "true_ate": 0.006,
+  "estimates": {
+    "Naive (Observational)": 0.0001,
+    "Ground Truth (RCT)": 0.006
+  }
+}
