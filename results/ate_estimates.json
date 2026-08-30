@@ -6,6 +6,7 @@
     "PSM": 0.0023,
     "IPW": 0.0009,
     "DML (Manual)": 0.0004,
-    "DML (EconML)": 0.0004
+    "DML (EconML)": 0.0004,
+    "Causal Forest": 0.0003
   }
 }
