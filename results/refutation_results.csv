@@ -1,0 +1,4 @@
+Test,Original ATE,New Effect,Change (%),Pass,Interpretation
+random_common_cause,0.0002,0.0002,0.4,✅,Estimasi stabil saat covariate acak ditambahkan ✅
+placebo_treatment,0.0002,-0.0001,52.7,✅,Estimasi mendekati nol dengan treatment acak ✅
+data_subset,0.0002,0.0003,24.3,❌,Estimasi tidak stabil (24.3% change) ❌
