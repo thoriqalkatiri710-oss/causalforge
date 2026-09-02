@@ -19,7 +19,7 @@ Dataset observational (non-RCT) mengandung confounding yang membuat naive compar
 
 ## Struktur Project
 
-\`\`\`
+---
 causalforge/
 ├── src/
 │   ├── causal_foundations/   # Data loader, confounding, overlap check
@@ -36,7 +36,7 @@ causalforge/
 ├── notebooks/                 # Eksplorasi
 ├── tests/                     # Unit tests
 └── docs/                      # Dokumentasi
-\`\`\`
+---
 
 
 ---
@@ -131,7 +131,7 @@ python src/estimation/refutation.py
 ---
 
 ## Struktur Project
-\`\`\`
+---
 causalforge/
 ├── src/
 │ ├── causal_foundations/ # Data loader, confounding, overlap check
@@ -148,7 +148,7 @@ causalforge/
 ├── notebooks/ # Eksplorasi
 ├── tests/ # Unit tests
 └── docs/ # Dokumentasi
-\`\`\`
+---
 
 
 ---
