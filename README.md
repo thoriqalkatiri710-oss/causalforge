@@ -17,41 +17,26 @@ Dataset observational (non-RCT) mengandung confounding yang membuat naive compar
 
 ---
 
----
-## Arsitektur Pipeline
-Criteo Dataset (100K rows, RCT ground truth)
-│
-├──► Confounding Injection (strength=2.0)
-│ └── Simulasi data observational dengan ground truth tersimpan
-│
-├──► Overlap Check (Propensity Score)
-│ └── Verifikasi asumsi positivity secara empiris
-│
-├──► Naive Estimation → Bias 98.3%
-│ └── Demonstrasi konkret mengapa korelasi ≠ kausalitas
-│
-├──► Propensity Score Methods
-│ ├── PSM (Nearest-Neighbor, caliper=0.05) → Bias 61.7%
-│ └── IPW (Stabilized weights, trimming) → Bias 85.0%
-│
-├──► Double Machine Learning (Chernozhukov et al. 2018)
-│ ├── Manual implementation (Frisch-Waugh-Lovell)
-│ └── EconML LinearDML → Bias 93.3%
-│
-├──► Causal Forest (Wager & Athey 2018)
-│ ├── CATE per individu (heterogeneous treatment effects)
-│ ├── Uplift curve + policy recommendation
-│ └── Top 20% CATE = 4.7x lebih tinggi dari rata-rata
-│
-├──► Synthetic Control (Abadie & Gardeazabal 2003)
-│ ├── Panel data estimation → Bias 0.1%
-│ └── In-space placebo test
-│
-└──► Sensitivity & Validation
-├── Manski Bounds (partial identification)
-├── Robustness Value (Cinelli & Hazlett 2020)
-└── DoWhy Refutation Tests (2/3 passed)
----
+## Struktur Project
+
+\`\`\`
+causalforge/
+├── src/
+│   ├── causal_foundations/   # Data loader, confounding, overlap check
+│   ├── estimation/           # PSM, IPW, DML, comparison, refutation
+│   ├── forests/              # Causal Forest + CATE analysis
+│   ├── sensitivity/          # Manski bounds, robustness value
+│   └── synthetic_control/    # SCM + placebo test
+├── data/
+│   ├── raw/                  # Criteo dataset (atau simulasi)
+│   └── processed/            # Confounded data + propensity scores
+├── results/
+│   └── figures/               # 11 visualisasi
+│       *.json, *.csv          # Estimates dan validation tables
+├── notebooks/                 # Eksplorasi
+├── tests/                     # Unit tests
+└── docs/                      # Dokumentasi
+\`\`\`
 
 
 ---
@@ -145,9 +130,8 @@ python src/estimation/refutation.py
 
 ---
 
-
----
 ## Struktur Project
+\`\`\`
 causalforge/
 ├── src/
 │ ├── causal_foundations/ # Data loader, confounding, overlap check
@@ -164,7 +148,7 @@ causalforge/
 ├── notebooks/ # Eksplorasi
 ├── tests/ # Unit tests
 └── docs/ # Dokumentasi
----
+\`\`\`
 
 
 ---
